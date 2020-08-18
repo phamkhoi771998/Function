@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let number1 = prompt("Enter the first number:");
+    let number2 = prompt("Enter the second number:");
+    alert(compareTwoNumber(number1,number2));
+
+    function compareTwoNumber(num1,num2) {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        let rs;
+        if(num1>num2){
+            rs = num1+" > "+num2;
+        } else{
+            rs = num1+ " + "+ num2+" = "+(num1+num2) ;
+        }
+        return rs;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let starName = prompt("Enter the star's name");
+    let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let rs = findStar(starName);
+    alert(rs);
+
+    function findStar(name) {
+        if(arr1.includes(name)){
+            return arr2[arr1.indexOf(name)];
+        } else return "Not found the star "+name;
+    }
+</script>
+</body>
+</html>
