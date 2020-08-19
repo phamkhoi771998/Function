@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    function checkChar(string,char) {
+        let count = 0;
+        for(let i=0;i<string.length;i++){
+            if(string[i]===char){
+                count++;
+            }
+        }
+        if(count===0){
+            return -1;
+        } else{
+            return count;
+        }
+    }
+
+    let arrStr = prompt("Nhập chuỗi kí tự: ");
+    let character = prompt("Nhập kí tự cần kiểm tra:");
+    let rs="Chuỗi kí tự đã nhập: "+arrStr;
+    let count =checkChar(arrStr,character);
+    if(count===-1){
+        rs+="<br>Kí tự '"+ character+"' không nằm trong chuỗi kí tự vừa nhập";
+    } else rs+="<br>Kí tự '"+ character+"' xuất hiện "+count+" lần";
+    document.write(rs);
+</script>
+</body>
+</html>

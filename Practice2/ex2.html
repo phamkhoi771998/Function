@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Bán kính: </th>
+        <td><input id="input" type="number" onchange="calculate(this.value)" oninput="calculate(this.value)"></td>
+    </tr>
+    <tr>
+        <th>Chu vi: </th>
+        <td><input id="perimeter" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Diện tích:  </th>
+        <td><input id="area" type="text" disabled></td>
+    </tr>
+</table>
+<script>
+    function calculate(value) {
+        document.getElementById("perimeter").value = circlePerimeter(value);
+        document.getElementById("area").value = circleArea(value);
+    }
+    function circlePerimeter(value) {
+        value=parseFloat(value);
+        return value*2*3.14;
+    }
+    function circleArea(value) {
+        value=parseFloat(value);
+        return value*value*3.14;
+    }
+
+</script>
+</body>
+</html>

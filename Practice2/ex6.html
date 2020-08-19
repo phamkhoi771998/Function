@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập một số: ");
+    while (isNaN(number)) {
+        number = prompt("Nhập lỗi, mời nhập lại");
+    }
+    let rs;
+    if (isInteger(number)) {
+        rs = number + " là số nguyên dương";
+    } else {
+        rs = number + " không phải là số nguyên dương";
+    }
+    document.write(rs);
+
+    function isInteger(value) {
+        value=parseFloat(value);
+        return !(value <= 0 || value !== Math.round(value));
+    }
+</script>
+</body>
+</html>

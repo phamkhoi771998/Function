@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let arrLength = parseInt(prompt("Nhập số phần tử của mảng:"));
+    while (isNaN(arrLength)||arrLength<0) {
+        arrLength = parseInt(prompt("Nhập lỗi, mời nhập lại:"));
+    }
+    if (arrLength === 0) {
+        alert("Mảng rỗng!");
+    } else {
+        let arrInt = [];
+        let rs;
+        arrInt=getArr(arrLength);
+        rs="Mảng đã nhập là: "+displayArr(arrInt);
+        arrInt = reverseArr(arrInt);
+        rs+="<br>Mảng sau khi đảo ngược là: "+displayArr(arrInt);
+        document.write(rs);
+    }
+
+    function reverseArr(arr) {
+        for(let i=0;i<arr.length-i;i++){
+            let temp = arr[i];
+            arr[i]=arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
+        }
+        return arr;
+    }
+
+    function displayArr(arr){
+        let rs = "[";
+        for(let i=0;i<arr.length;i++){
+            if(i!==arr.length-1){
+                rs+=arr[i]+", ";
+            } else rs+=arr[i]+"]";
+        }
+        return rs;
+    }
+
+    function getArr(length) {
+        let arr = [];
+        for(let i=0;i<length;i++){
+            arr[i] = parseInt(prompt("Nhập phần tử thứ "+i+": "));
+        }
+        return arr;
+    }
+</script>
+</body>
+</html>

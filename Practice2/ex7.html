@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let arr = []
+    arr[0] = prompt("Nhập số thứ nhất:");
+    arr[1] = prompt("Nhập số thứ hai:");
+    while (isNaN(arr[0])||isNaN(arr[1])){
+        alert("Nhập lỗi, mời nhập lại!")
+        if(isNaN(arr[0])){
+            arr[0] = prompt("Nhập số thứ nhất:");
+        }
+        if(isNaN(arr[1])){
+            arr[1] = prompt("Nhập số thứ hai:");
+        }
+    }
+
+    document.write(arr[0]+" , "+arr[1]+"<br>");
+    arr=swapNumber(arr);
+    document.write(arr[0]+" , "+arr[1]+"<br>");
+    function swapNumber(value) {
+        let temp=value[0];
+        value[0]=value[1];
+        value[1]=temp;
+        return value;
+    }
+
+</script>
+</body>
+</html>

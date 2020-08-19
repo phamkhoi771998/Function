@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập một số: "));
+    while(number <0){
+        number = parseInt(prompt("Nhập lỗi, mời nhập lại: "));
+    }
+    let factNum = factorial(number);
+    alert(number+"! = "+factNum);
+
+    function factorial(value) {
+        value=parseInt(value);
+        if(value===0){
+            return 1;
+        } else {
+            return value*factorial(value-1);
+        }
+    }
+</script>
+</body>
+</html>
