@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+</head>
+<body>
+<p id="listProduct"></p><br><br>
+<button id="addBtn" type="button" onclick="addNewProduct()">Add</button>
+<button id="editBtn" type="button" onclick="editProduct()">Edit</button>
+<button id="delBtn" type="button" onclick="deleteProduct()">Delete</button>
+<script>
+    let listProd = [];
+    let rs;
+
+    displayProduct();
+
+    function addNewProduct() {
+        let newProd = prompt("Enter the name of the product you want to add:");
+        if (confirm(newProd + " will be added. Continue?")) {
+            listProd.push(newProd);
+            alert("Product has been added");
+            displayProduct();
+        } else alert("Canceled");
+    }
+
+    function displayProduct() {
+        rs = "Display All Product: " + listProd.length + " prod <br>";
+        for (let i = 0; i < listProd.length; i++) {
+            rs += (i + 1) + ". " + listProd[i] + "<br>";
+        }
+        if (listProd.length === 0) {
+            document.getElementById("editBtn").disabled = true;
+            document.getElementById("delBtn").disabled = true;
+        } else {
+            document.getElementById("editBtn").disabled = false;
+            document.getElementById("delBtn").disabled = false;
+        }
+        document.getElementById("listProduct").innerHTML = rs;
+    }
+
+    function editProduct() {
+        let pos = prompt("Enter the product position that you want to change: ");
+        if (pos > listProd.length || pos <= 0) {
+            alert("Error!")
+        } else {
+            if (confirm("Are you sure to change '" + listProd[pos - 1] + "'?")) {
+                let newProdName = prompt("Enter the new product's name:");
+                if (confirm(listProd[pos - 1] + " will be changed to " + newProdName + ". Continue?")) {
+                    listProd[pos - 1] = newProdName;
+                    alert("Done!");
+                    displayProduct();
+                } else alert("Canceled");
+            } else alert("Canceled");
+        }
+    }
+
+    function deleteProduct() {
+        let pos = prompt("Enter the product position that you want to delete: ");
+        if (confirm("Are you sure to delete '" + listProd[pos - 1] + "'?")) {
+            listProd.splice(pos - 1, 1);
+            alert("Done!");
+            displayProduct();
+        } else alert("Canceled");
+    }
+</script>
+</body>
+</html>
